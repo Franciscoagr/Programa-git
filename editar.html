@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editar Guia</title>
+          <!-- ese es el tituolo de la pestana -->
+        <link rel="stylesheet" href="codigo.css">
+        <!-- este link conecta con el codigo css -->
+       
+    </head>
+
+    <body id="nueva">
+        <div> 
+           <H1 id="cuarta">edicion de Guia  </H1> 
+        </div>
+        <div class="formulario">
+            <form action="guardar.php" method="post">
+                <p id="arriba">ubicacion actual</p>
+                <label for="actual">celular, nombre</label>
+                <input type="text" name="actual" placeholder="actual" required>
+                <br>
+                <p id="arriba"></p>
+                <label for="direccion"> proxima ubicacion</label>
+                <input type="text" name="ubicacion" placeholder="ubicacion" required>
+                <br>
+                <p id="arriba">Nombre del editor </p>
+                <br>
+                <br>
+                <button id="enviar"onclick="location.href='index.html'" type="submit">Guardar Guia</button> 
+            </form>
+        </div>
+    </body>
+</html>
