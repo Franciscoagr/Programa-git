@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Inicia edición</title>
-        <!-- ese es el tituolo de la pestana -->
-      <link rel="stylesheet" href="codigo.css">
-      <!-- este link conecta con el codigo css -->
-    </head>
-
-    <body id="nueva">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicia sesión</title>
+    <link rel="stylesheet" href="codigo.css">
+    <style>
+        /* Agrega reglas CSS para los campos de entrada */
+        input[type="text"],
+        input[type="password"] {
+            width: 250px; /* Puedes ajustar este valor según tus preferencias */
+            padding: 8px; /* Agrega algún espacio interno para que se vea mejor */
+        }
+    </style>
+</head>
+<body id="nueva">
     <div>
         <h1 id="segunda">Inicia sesión</h1>
     </div>
-    <div class="formulario" >
-        <form action="guardar.php" method="post">
+    <div class="formulario">
+        <form action="inicia.php" method="post">
             <p id="">Editar Guia</p>
             <br>
             <p id="">Nombre de Usuario</p>
-            <label for="introducir usuario"></label>
-            <input type="text" name="introducir usuario" placeholder="introducir usuario" required>
+            <label for="usuario"></label>
+            <input type="text" name="usuario" placeholder="Introduce usuario" required>
             <br>
             <br>
-            <p id="">contraseña</p>
-            <label for="introducir contraseña"></label>
-            <input type="text" name="introducir Contraseña" placeholder="introducir Contraseña" required>
+            <p id="">Contraseña</p>
+            <label for="contrasena"></label>
+            <input type="password" name="contrasena" placeholder="Introduce Contraseña" required>
             <br>
             <br>
             <br>
             <br>
-            <button id="edicionguia"onclick="location.href='editarguia.html'" type="submit">Ingresar</button> 
+            <button id="edicionguia" type="submit">Ingresar</button>
         </form>
-
     </div>
-    </body>
+</body>
 </html>

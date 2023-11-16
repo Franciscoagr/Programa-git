@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Editar Guia</title>
-        <!-- ese es el tituolo de la pestana -->
-      <link rel="stylesheet" href="codigo.css">
-      <!-- este link conecta con el codigo css -->
-    </head>
-
-    <body id="nueva">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Edición de Guía</title>
+    <link rel="stylesheet" href="codigo.css">
+</head>
+<body id="nueva">
     <div>
-        <h1 id="segunda">Editar Guia</h1>
+        <h1 id="cuarta">Edición de Guía</h1>
     </div>
-    <div class="formulario" >
-        <form action="guardar.php" method="post">
-            <p id="">Introducir numero de guia</p>
+    <div class="formulario">
+        <form action="actualizar.php" method="post">
+            <p id="">Introducir número de guía</p>
             <label for="buscar"></label>
-            <input type="text" name="buscar" placeholder="buscar" required>
+            <input type="text" name="buscar" placeholder="Número de guía" required>
             <br>
+            <p id="arriba">Ubicación Actual</p>
+            <label for="actual"></label>
+            <input type="text" name="actual" placeholder="Actual" required>
             <br>
-            <button id="edicionguia"onclick="location.href='editar.html'" type="submit">Editar Guia</button> 
+            <p id="arriba">Próxima Ubicación</p>
+            <label for="proximo"></label>
+            <input type="text" name="proximo" placeholder="Próximo" required>
+            <br>
+            <button id="enviar" type="submit">Guardar Guía</button> 
         </form>
     </div>
-    </body>
+</body>
 </html>
