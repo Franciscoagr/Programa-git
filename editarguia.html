@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,22 +9,48 @@
     <div>
         <h1 id="cuarta">Edición de Guía</h1>
     </div>
-    <div class="formulario">
-        <form action="actualizar.php" method="post">
-            <p id="">Introducir número de guía</p>
-            <label for="buscar"></label>
-            <input type="text" name="buscar" placeholder="Número de guía" required>
-            <br>
-            <p id="arriba">Ubicación Actual</p>
-            <label for="actual"></label>
-            <input type="text" name="actual" placeholder="Actual" required>
-            <br>
-            <p id="arriba">Próxima Ubicación</p>
-            <label for="proximo"></label>
-            <input type="text" name="proximo" placeholder="Próximo" required>
-            <br>
-            <button id="enviar" type="submit">Guardar Guía</button> 
+    <div class="formulario" id="formulario">
+        <form>
+            <p>Introducir número de guía</p>
+            <input type="text" name="buscar" placeholder="Número de guía" required />
+            <br />
+            <p>Ubicación Actual</p>
+            <input type="text" name="actual" placeholder="Actual" required />
+            <br />
+            <p>Próxima Ubicación</p>
+            <input type="text" name="proximo" placeholder="Próximo" required />
+            <br />
+            <button id="enviar" type="button">Guardar Guía</button> 
         </form>
+        <p id="resultado"></p>
     </div>
+    <script>
+        document.getElementById('enviar').addEventListener('click', async () => {
+            const guia = document.getElementsByName('buscar')[0].value;
+            const actual = document.getElementsByName('actual')[0].value;
+            const proximo = document.getElementsByName('proximo')[0].value;
+            const resultado = document.getElementById('resultado');
+
+            const data = new FormData();
+            data.append('buscar', guia);
+            data.append('actual', actual);
+            data.append('proximo', proximo);
+
+            try {
+                const response = await fetch('actualizar.php', {
+                    method: 'POST',
+                    body: data,
+                });
+
+                if (response.ok) {
+                    resultado.textContent = 'Datos actualizados exitosamente.';
+                } else {
+                    resultado.textContent = 'Error al enviar los datos al backend.';
+                }
+            } catch (error) {
+                resultado.textContent = 'Error de red: ' + error;
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 

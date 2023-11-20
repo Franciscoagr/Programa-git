@@ -1,38 +1,43 @@
+<!-- Nuevaguia.html -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Nueva Guia</title>
-        <link rel="stylesheet" href="codigo.css">
-       
-       
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Guía</title>
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body id="nueva">
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="inicosecion.html">Nueva Guía</a></li>
+            <li><a href="iniciaedicion.html">Editar Guía</a></li>
+            <li><a href="buscarguia.html">Buscar Guía</a></li>
+        </ul>
+    </nav>
 
-    <body id="nueva">
-        <div> 
-           <H1 id="cuarta">Nueva Guia  </H1> 
-        </div>
-        <div class="formulario">
-            <form action="guardar.php" method="post">
-                <p id="arriba">Informacion Del Remitente</p>
-                <label for="Remitente">celular, nombre</label>
-                <input type="text" name="Remitente" placeholder="Remitente" required>
-                <br>
-                <p id="arriba">dirección</p>
-                <label for="direccion"> ciudad, direccion</label>
-                <input type="text" name="direccion" placeholder="direccion" required>
-                <br>
-                <p id="arriba">numero de Guia</p>
-                <label for="guia N"> Guia N</label>
-                <input type="text" name="guia N" placeholder="Guia N" required>
-                <br>
-                <p id="arriba">Informacion Destinatario </p>
-                <label for="destinatario"> 1.celular,2.celular,nombre</label>
-                <input type="text" name="destinatario" placeholder="destinatario" required>
-                <br>
-                <br>
-                <button id="enviar"onclick="location.href='index.html'" type="submit">Guardar Guia</button> 
-            </form>
-        </div>
-    </body>
+    <div class="formulario" id="si">
+        <p id="arriba">Ingrese los datos</p>
+        <br>
+        <p id="arriba">Informacion Del Remitente</p>
+        <label for="Remitente">celular, nombre</label>
+        <input type="text" name="Remitente" placeholder="Remitente" required>
+        <br>
+        <p id="arriba">dirección</p>
+        <label for="direccion"> ciudad, direccion</label>
+        <input type="text" name="direccion" placeholder="direccion" required>
+        <br>
+        <p id="arriba">numero de Guia</p>
+        <label for="guia N"> Guia N</label>
+        <input type="text" name="guia N" placeholder="Guia N" required>
+        <br>
+        <p id="arriba">Informacion Destinatario </p>
+        <label for="destinatario"> 1.celular,2.celular,nombre</label>
+        <input type="text" name="destinatario" placeholder="destinatario" required>
+        <br>
+        <br>
+        <button id="enviar" onclick="location.href='index.html'" type="submit">Guardar Guia</button>
+    </div>
+</body>
 </html>
+
