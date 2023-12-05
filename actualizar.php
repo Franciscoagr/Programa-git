@@ -12,11 +12,11 @@ $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-
+// Obtener los datos enviados
 $guia = $_POST['buscar'];
 $actual = $_POST['actual'];
 $proximo = $_POST['proximo'];
-
+// Preparar  para actualizar los datos en la base de datos
 $sql = "UPDATE principalguia SET actual=?, proximo=? WHERE guia=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", $actual, $proximo, $guia);

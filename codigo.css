@@ -1,5 +1,5 @@
 #principal{ 
-    background-color: rgb(41, 160, 5);
+    background-color: rgb(29, 70, 15);
        /*cambiar de color el fondo */
        font-family: 'Times New Roman', Times, serif;
        /* para cambiar tipo de letra*/
@@ -163,3 +163,8 @@ input[type=text]{
 }
 
 
+input[type="text"],
+input[type="password"] {
+    width: 250px; 
+    padding: 8px; 
+}

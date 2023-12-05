@@ -11,12 +11,15 @@
     </div>
     <div class="formulario" id="formulario">
         <form>
+        <!--  introducir el número de guía -->
             <p>Introducir número de guía</p>
             <input type="text" name="buscar" placeholder="Número de guía" required />
             <br />
+            <!-- introducir ubicación actual -->
             <p>Ubicación Actual</p>
             <input type="text" name="actual" placeholder="Actual" required />
             <br />
+             <!-- introducir la próxima ubicación -->
             <p>Próxima Ubicación</p>
             <input type="text" name="proximo" placeholder="Próximo" required />
             <br />
@@ -24,13 +27,15 @@
         </form>
         <p id="resultado"></p>
     </div>
+     <!--  JavaScript para manejar la  actualización de los datos-->
     <script>
         document.getElementById('enviar').addEventListener('click', async () => {
+            // Obtener la informacion del formulario
             const guia = document.getElementsByName('buscar')[0].value;
             const actual = document.getElementsByName('actual')[0].value;
             const proximo = document.getElementsByName('proximo')[0].value;
             const resultado = document.getElementById('resultado');
-
+            //envia los datos
             const data = new FormData();
             data.append('buscar', guia);
             data.append('actual', actual);

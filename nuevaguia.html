@@ -1,4 +1,3 @@
-<!-- Nuevaguia.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,10 +14,9 @@
             <li><a href="buscarguia.html">Buscar Guía</a></li>
         </ul>
     </nav>
-
-    <div class="formulario" id="si">
-        <p id="arriba">Ingrese los datos</p>
-        <br>
+</div>
+<div class="formulario">
+    <form action="guardar.php" method="post">
         <p id="arriba">Informacion Del Remitente</p>
         <label for="Remitente">celular, nombre</label>
         <input type="text" name="Remitente" placeholder="Remitente" required>
@@ -36,8 +34,9 @@
         <input type="text" name="destinatario" placeholder="destinatario" required>
         <br>
         <br>
-        <button id="enviar" onclick="location.href='index.html'" type="submit">Guardar Guia</button>
-    </div>
+        <button id="enviar"onclick="location.href='index.html'" type="submit">Guardar Guia</button> 
+    </form>
+</div>
 </body>
 </html>
 

@@ -6,7 +6,7 @@ $db_host = 'localhost:3308';
 $db_user = 'root';
 $db_password = '';
 $db_name = 'proyecto';
-
+// Crea conexión a la base de datos
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
 if ($conn->connect_error) {
@@ -14,9 +14,11 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener los datos del formulario
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
+    // Consultar y comparar base de datos 
     $sql = "SELECT * FROM acceso WHERE usuario=? AND contrasena=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $usuario, $contrasena);

@@ -14,8 +14,10 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //Obtener los datos del formulario
     $guia = $_POST['buscar_guia'];
 
+   // Consultar y comparar base de datos 
     $sql = "SELECT * FROM principalguia WHERE guia=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $guia);
@@ -24,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
+            // Mostrar el resultado por medio de este html
 ?>
             <!DOCTYPE html>
             <html lang="es">
@@ -39,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h2>Información de la Guía:</h2>
 
 <?php
+                // Mostrar información de la guía
                 $row = $result->fetch_assoc();
                 echo "<p>Guía: " . $row['guia'] . "</p>";
                 echo "<p>Ubicación Actual: " . $row['actual'] . "</p>";
